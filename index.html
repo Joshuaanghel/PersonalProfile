@@ -93,67 +93,6 @@
             text-decoration: none;
         }
 
-        /* ---- NAV ---- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-bottom: 1px solid transparent;
-        }
-
-        nav.scrolled {
-            background: rgba(3, 3, 3, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 4rem;
-        }
-
-        .logo {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 950;
-            font-size: 1.5rem;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #a78bfa, #06b6d4, #a78bfa);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: logo-shimmer 4s linear infinite;
-            filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.5));
-        }
-
-        @keyframes logo-shimmer {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .nav-links a {
-            color: var(--text-3);
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-            letter-spacing: 0.3em;
-        }
-
         /* ---- BUTTONS ---- */
         .btn {
             padding: 1.25rem 3rem;
@@ -1112,18 +1051,6 @@
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 1.25rem 2rem;
-            }
-
-            nav.scrolled {
-                padding: 1rem 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
             /* ---- HERO ---- */
             .hero {
                 padding: 0 1.5rem;
@@ -1281,16 +1208,6 @@
 
     <canvas id="site-particles"></canvas>
     <div class="ambient-bg"></div>
-
-    <nav id="navbar">
-        <div class="logo">Anghel</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Work</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
 
     <section class="hero" id="hero">
         <div class="hero-bg-text-wrapper">
@@ -1565,12 +1482,6 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Navbar blur on scroll
-        const nav = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 50);
-        }, { passive: true });
 
         // Waveform
         const wv = document.getElementById('waveform-visual');
