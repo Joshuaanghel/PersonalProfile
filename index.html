@@ -1074,19 +1074,6 @@
                 grid-template-columns: 1fr;
                 gap: 4rem;
             }
-
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .stat:nth-child(2) {
-                border-right: none;
-            }
-
-            .stat:nth-child(1),
-            .stat:nth-child(2) {
-                border-bottom: 1px solid var(--border);
-            }
         }
 
         @media (max-width: 768px) {
@@ -1102,16 +1089,45 @@
                 display: none;
             }
 
+            /* ---- HERO ---- */
             .hero {
-                padding: 0 2rem;
+                padding: 0 1.5rem;
             }
 
             .hero-bg-text-wrapper {
                 display: none;
             }
 
+            .hero-tag {
+                font-size: 0.6rem;
+                letter-spacing: 0.15em;
+                padding: 0.6rem 1rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                flex-direction: column;
+                gap: 0;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+
+            .h1-agentic {
+                font-size: clamp(2.5rem, 14vw, 5rem);
+            }
+
+            .h1-ai {
+                font-size: clamp(4rem, 22vw, 7rem);
+            }
+
+            .hero-sub {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+            }
+
             .hero-cta {
                 flex-direction: column;
+                width: 100%;
             }
 
             .hero-cta .btn {
@@ -1119,23 +1135,103 @@
                 width: 100%;
             }
 
+            /* ---- STATS: 2x2 grid ---- */
+            .stats {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding: 0;
+            }
+
+            .stat {
+                flex-direction: column;
+                gap: 0.25rem;
+                align-items: flex-start;
+                padding: 1.1rem 1.25rem;
+            }
+
+            .stat:nth-child(1),
+            .stat:nth-child(2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .stat:nth-child(1),
+            .stat:nth-child(3) {
+                border-right: 1px solid var(--border);
+            }
+
+            .stat-num {
+                font-size: 1.05rem;
+                letter-spacing: -0.01em;
+            }
+
+            .stat-label {
+                font-size: 0.6rem;
+            }
+
+            /* ---- SECTIONS ---- */
             section {
-                padding: 5rem 2rem;
+                padding: 4rem 1.5rem;
             }
 
+            /* ---- ABOUT ---- */
+            .about-layout {
+                gap: 3rem;
+            }
+
+            .about-manifesto {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-strip {
+                flex-direction: column;
+            }
+
+            .about-strip-item {
+                padding: 1.1rem 1.5rem;
+            }
+
+            .about-strip-item + .about-strip-item {
+                border-left: none;
+                border-top: 1px solid var(--border);
+            }
+
+            /* ---- PROJECTS ---- */
+            .project-info {
+                padding: 2rem 1.5rem;
+            }
+
+            .project h3 {
+                font-size: 2.2rem;
+            }
+
+            .project-tagline {
+                font-size: 1rem;
+            }
+
+            .project-visual {
+                min-height: 280px;
+            }
+
+            /* ---- CONTACT ---- */
             .contact-section {
-                padding: 8rem 2rem;
+                padding: 6rem 1.5rem;
             }
 
+            .contact-heading {
+                font-size: clamp(2.75rem, 14vw, 12rem);
+            }
+
+            .contact-sub {
+                font-size: 1.1rem;
+            }
+
+            /* ---- FOOTER ---- */
             footer {
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
                 padding: 2rem;
-            }
-
-            .project-info {
-                padding: 2.5rem;
             }
         }
     </style>
